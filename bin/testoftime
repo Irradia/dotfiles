@@ -1,0 +1,10 @@
+#! /bin/dash
+
+PNAME="/baroftime"
+
+pgrep -f $PNAME
+if [ $? -eq 0 ]; then
+	pkill -f $PNAME
+else
+	~/bin/baroftime
+fi

@@ -1,0 +1,62 @@
+#! /bin/bash
+
+SELECT=$(echo "mpd
+pacman
+system
+fortune
+calendar
+volume" | dmenu -i -h 12 -uh 1 -p "!" -o 0.7 -fn "Terminus-8:normal" -nb \#48483e -nf \#76715e -sb \#48483e -sf \#cfd0c2 -uc \#a7e22e)
+
+case "$SELECT" in
+	mpd)
+		notify-send --urgency low "MPD" "$(mpc current)"
+		;;
+	pacman)
+		notify-send --urgency low "PACMAN" "$(pacman -Qu | wc -l) out of date packages"
+		;;
+	fortune)
+		notify-send --urgency low "FORTUNE" "$(fortune)"
+		;;
+	calendar)
+		notify-send --urgency low "CALENDAR" "$(date "+%H:%M - %e")\n$(cal)"
+		;;
+	volume)
+		# Hacked together volume
+		CHANNEL=$(amixer | sed "1s/^.*'\(.*\)'.*$/\1/p;d")
+		notify-send --urgency low "VOLUME" "Volume is at $(amixer get $CHANNEL | sed -n 's/^.*\[\([0-9]\+%\).*$/\1/p' | uniq)"
+		;;
+	system)
+		# Hacked together memory status
+		human=1024
+		mem_info=$(</proc/meminfo)
+		mem_info=$(echo $(echo $(mem_info=${mem_info// /}; echo ${mem_info//kB/})))
+		for m in $mem_info; do
+			if [[ ${m//:*} = MemTotal ]]; then
+				memtotal=${m//*:}
+			fi
+
+			if [[ ${m//:*} = MemFree ]]; then
+				memfree=${m//*:}
+			fi
+
+			if [[ ${m//:*} = Buffers ]]; then
+				membuffer=${m//*:}
+			fi
+
+			if [[ ${m//:*} = Cached ]]; then
+				memcached=${m//*:}
+			fi
+		done
+		usedmem="$(((($memtotal - $memfree) - $membuffer - $memcached) / $human))"
+		totalmem="$(($memtotal / $human))"
+
+		mem="${usedmem}MB / ${totalmem}MB"
+		cpu="$(cat /proc/loadavg)"
+		uptime="$(uptime | cut -c 1-9)"
+
+		notify-send --urgency low "SYSTEM" "$uptime\n$mem\n$cpu"
+		;;
+	*)
+		exit 1
+		;;
+esac

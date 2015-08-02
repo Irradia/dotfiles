@@ -1,0 +1,42 @@
+#! /bin/env dash
+
+FONT='-*-terminus-medium-*-normal-*-12-*-*-*-c-*-iso10646-1'
+FG=#FFdc2566
+BG=#CC272822
+
+ROOT=$(lsw -r)
+BARW=116
+BARH=6
+DISW=$(wattr w $ROOT)
+DISH=$(wattr h $ROOT)
+GEOSTR=$BARHx$BARW+$(($(($DISW/2)) - $(($BARW/2))))+2
+# GEOSTR=$BARHx$BARW+$(($(($DISW/2)) - $BARW))+4
+# GEOSTR=100x12+1+1
+
+
+btime() {
+	date "+%H:%M:%S"
+}
+
+bdate() {
+	date "+%d/%m/%y"
+}
+
+bmpd() {
+	mpc current
+}
+
+bbar() {
+	while :; do
+		date "+%d/%m/%y"
+		# echo "%{c}%{A:$(bdate):}$(btime)%{A}"
+		sleep 1
+	done | bar -B $BG -F $FG -f $FONT -g $GEOSTR
+}
+
+while :; do
+	echo "%{c}$(btime) %{F#FF71736a}|%{F} $(bdate)"
+	# echo "$(date "+%d/%m/%y")"
+	# echo "%{c}%{A:$(bdate):}$(btime)%{A}"
+	sleep 1
+done | bar -B $BG -F $FG -f $FONT -g $GEOSTR

@@ -1,0 +1,17 @@
+#!/bin/env dash
+
+i3-msg "
+workspace 10:0;
+layout tabbed;
+# exec --no-startup-id urxvt;
+# exec --no-startup-id urxvt;
+# exec --no-startup-id urxvt;
+exec --no-startup-id urxvt;
+split vertical;
+exec --no-startup-id urxvt;
+split horizontal;
+exec --no-startup-id urxvt;
+"
+
+
+# vim: syntax=sh

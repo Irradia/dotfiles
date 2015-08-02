@@ -1,0 +1,68 @@
+# Command Stuff {{{ 
+
+mod4 + Escape
+	~/bin/suppressed-lock
+
+mod4 + Return
+	urxvt
+
+{_,shift +} @Print
+	scrot {--silent ,--select }'%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/tmp/scrots'
+
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+        amixer set Master 5%{+,-}
+ 
+XF86AudioMute
+        amixer sset Master toggle
+
+# mod4 + alt + {0-9}
+#	mpc volume {0, 10, 20, 30, 40, 50, 60, 70, 80, 90}
+
+mod4 + minus
+	mpc toggle
+
+mod4 + a
+	~/bin/arithmenu
+
+mod4 + d
+	dmenu_run -i -h 12 -uh 1 -p "$" -o 0.7 -fn "Terminus-8:normal" -nb \#48483e -nf \#76715e -sb \#48483e -sf \#cfd0c2 -uc \#a7e22e
+
+mod4 + f
+	~/bin/notify-me
+
+# mod4 + s
+#	~/bin/switchtop
+# }}}
+# Bspwm binds {{{
+mod4 + {_,shift +} {h,j,k,l}
+	bspc window {--focus, --swap} {left, down, up, right}
+
+mod4 + alt + {h,j,k,l, Escape}
+	bspc window --presel {left, down, up, right, cancel}
+
+mod4 + {_,shift +} Tab
+	bspc window --focus {next, prev}
+
+mod4 + button{1-3}
+	bspc pointer --grab {move, resize-side, resize_corner}
+
+mod4 + !button{1-3}
+	bspc pointer --track %i %i
+
+mod4 + {_, shift +} {0-9}
+	bspc {desktop --focus, window --to-desktop} {0-9}
+
+mod4 + {g, y, u, b, n}
+	bspc window -t {fullscreen, floating, psuedo_tiled, locked, sticky}
+
+mod4 + {e, r, c, v}
+	bspc desktop {--equalize, --balance, --circulate forward, --toggle}
+
+mod4 + x 
+	bspc window -c
+
+mod4 + z 
+	bspc window -k
+# }}}
+
+# vim: fdm=marker

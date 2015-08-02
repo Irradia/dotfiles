@@ -1,0 +1,5 @@
+#! /bin/dash
+
+pkill sxhkd
+sleep 0.5s
+sxhkd & disown > /dev/null 2>&1

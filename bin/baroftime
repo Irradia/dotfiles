@@ -1,0 +1,21 @@
+#! /bin/env dash
+
+FONT='*-clean-*-*-*-*-6-*-*-*-*-*-*'
+# FONT=-*-terminus-medium-*-normal-*-10-*-*-*-*-*-*-*
+FG=#FFdc2566
+BG=#00272822
+
+ROOT=$(lsw -r)
+BARW=31
+BARH=4
+DISW=$(wattr w $ROOT)
+DISH=$(wattr h $ROOT)
+GEOSTR=$BARHx$BARW+2+$(($DISH - $BARH - 5))
+
+while :
+do
+	date +%H:%M:%S
+	sleep 1
+done | bar -B $BG -F $FG -f $FONT -g $GEOSTR
+
+# vim: syntax=sh

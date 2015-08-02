@@ -1,0 +1,119 @@
+!Xft.dpi: 96
+!Xft.antialias: true
+!Xft.hinting: true
+!Xft.rgba: rgb
+!Xft.autohint: false
+!Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+
+
+!Rofi {{{
+rofi.modi:                 window,run,ssh
+rofi.opacity:              100
+rofi.width:                50
+rofi.lines:                15
+rofi.columns:              3
+rofi.font:                 terminus 8
+rofi.color-enabled:        false
+!!! WHAT
+! !                  bg             fg             bgalt          hlbg           hlfg
+! rofi.color-normal: argb:ff48483e, argb:ff76715e, argb:ff48483e, argb:ff48483e, argb:ffcfd0c2
+! rofi.color-urgent: argb:ff48483e, argb:ff76715e, argb:ff48483e, argb:ff48483e, argb:ffcfd0c2
+! rofi.color-active: argb:ff48483e, argb:ffcfd0c2, argb:ff48483e, argb:ff48483e, argb:ffcfd0c2
+! !                  bg             border
+! rofi.color-window: argb:ff48483e, argb:00ffffff
+! rofi.color-normal: #fdf6e3,  #002b36,  #eee8d5,  #586e75,  #eee8d5
+! rofi.color-urgent: #fdf6e3,  #dc322f,  #eee8d5,  #dc322f,  #fdf6e3
+! rofi.color-active: #fdf6e3,  #268bd2,  #eee8d5,  #268bd2,  #fdf6e3
+! !                  'background', 'border'
+! rofi.color-window: #fdf6e3,      #002b36
+rofi.fg:                   #76715e
+rofi.bg:                   #48483e
+rofi.bgalt:                #48483e
+rofi.hlfg:                 #cfd0c2
+rofi.hlbg:                 #48483e
+rofi.bc:                   #f1ebeb
+rofi.bw:                   0
+rofi.location:             0
+rofi.padding:              0
+rofi.yoffset:              0
+rofi.xoffset:              0
+rofi.fixed-num-lines:      false
+rofi.terminal:             urxvt
+rofi.ssh-client:           ssh
+rofi.ssh-command:          {terminal} -e {ssh-client} {host}
+rofi.run-command:          {cmd}
+rofi.run-list-command:     
+rofi.run-shell-command:    {terminal} -e {cmd}
+rofi.disable-history:      false
+rofi.levenshtein-sort:     false
+rofi.case-sensitive:       false
+rofi.sidebar-mode:         true
+rofi.lazy-filter-limit:    5000
+rofi.eh:                   1
+rofi.auto-select:          false
+rofi.pid:                  /run/user/1000/rofi.pid
+rofi.key-window:           
+rofi.key-run:              
+rofi.key-ssh:              
+! }}}
+!Dzen2 {{{
+dzen2.font:       -*-terminus-*-*-*-*-10-*-*-*-*-*-*-*
+dzen2.foreground: #22ee11
+dzen2.background: black
+! }}}
+!Yeahconsole {{{
+yeahconsole*term:            urxvt
+! yeahconsole*screenWidth:     1030
+yeahconsole*consoleHeight:   23
+! yeahconsole*xOffset:         10
+yeahconsole*aniDelay:        20
+yeahconsole*stepSize:        4
+yeahconsole*handleWidth:     1
+yeahconsole*handleColor:     #f1ebeb
+yeahconsole*background:      #272822
+! yeahconsole.foreground:
+yeahconsole*toggleKey:       Win+t
+! }}}
+! URxvt {{{
+URxvt.depth:              32
+URxvt.buffered:           true
+
+pointerBlankDelay:        .1
+
+URxvt.title:              URxvt
+
+URxvt.jumpScroll:         true
+URxvt.skipScroll:         false
+URxvt.scrollstyle:        plain
+URxvt.thickness:          1
+URxvt.scrollBar:          false
+URxvt.scrollBar_right:    true
+URxvt.scrollBar_floating: true
+URxvt.scrollTtyOutput:    false
+URxvt.scrollTtyKeypress:  true
+URxvt.saveLines:          65535
+
+URxvt.modifier:           alt
+
+URxvt.internalBorder:     1
+URxvt.externalBorder:     0
+URxvt.borderLess:         false
+
+URxvt.termName:           rxvt-unicode
+
+URxvt.cursorBlink:        true
+
+URxvt.urgentOnBell:       true
+
+! URxvt.geometry:           80x26
+
+! URxvt.font:               xft:terminus:size=14
+! symbola:size=14
+URxvt.font:               xft:terminus:size=8
+terminus\-ja:size=14
+fixed:size=8
+URxvt.boldFont:           xft:terminus:bold:size=8
+! }}}
+
+! vim: fdm=marker
