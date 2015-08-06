@@ -58,6 +58,9 @@ set sidescrolloff=6
 set foldmethod=syntax
 set foldcolumn=0
 
+" Completion
+set dictionary=/usr/share/dict/cracklib-small
+
 "  Clean backups
 set backup
 set backupdir=~/.nvim/backup
@@ -90,7 +93,7 @@ if has("gui_running")
 	colorscheme molokai
 endif
 " }}}
-" INTERACTIVITY {{{
+" NATIVE BINDINGS {{{
 
 "  Command maps
 
@@ -100,13 +103,13 @@ cmap w!! w !sudo tee % >/dev/null
 "  Key maps
 
 " remap the leader key
-let mapleader="\<space>"
+let g:mapleader="\<space>"
 
 " move between splits
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+" nmap <C-h> <C-w>h
+" nmap <C-j> <C-w>j
+" nmap <C-k> <C-w>k
+" nmap <C-l> <C-w>l
 
 " quick command things
 nmap <Leader>x :q<CR>
@@ -137,6 +140,11 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-plug'
 " Plugin 'sirver/UltiSnips'
 call plug#end()
+
+" Netrw
+let g:netrw_liststyle=3
+
+nmap <Leader>t :30Vexplore<CR>
 
 " Unite
 let g:unite_source_history_yank_enable = 1
@@ -189,7 +197,4 @@ endif
 " MISC {{{
 colorscheme usmyck
 " }}}
-
-
 " vim: fdm=marker syntax=vim
-
