@@ -38,7 +38,7 @@ bindsym $mod+Escape exec ~/bin/suppressed-lock
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec rofi -show window
 
-bindsym $mod+q exec ~/tmp/git/clipmenu/clipmenu
+# bindsym $mod+q exec ~/tmp/git/clipmenu/clipmenu
 
 bindsym $mod+shift+z exec killw $(pfw)
 bindsym $mod+x kill

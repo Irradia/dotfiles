@@ -142,9 +142,12 @@ Plug 'junegunn/vim-plug'
 call plug#end()
 
 " Netrw
+let g:netrw_banner=0
+let g:netrw_browse_split=4
 let g:netrw_liststyle=3
+let g:netrw_winsize=30
 
-nmap <Leader>t :30Vexplore<CR>
+nmap <Leader>t :Lexplore<CR>
 
 " Unite
 let g:unite_source_history_yank_enable = 1
