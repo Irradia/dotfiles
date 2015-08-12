@@ -15,7 +15,7 @@ class Default(ColorScheme):
 
 		elif context.in_browser:
 			if context.selected:
-				attr = normal
+				attr = reverse
 				bg = black
 				# fg = green
 			else:

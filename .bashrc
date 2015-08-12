@@ -17,6 +17,7 @@ alias ls='ls --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" 
 alias ll='ls -l --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
 alias la='ls -la --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
 alias grep='grep --color=tty -d skip'
+alias rm='rm -I'
 alias cp='cp -rvi'
 alias mv='mv -i'
 alias df='df -h'

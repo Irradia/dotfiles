@@ -34,7 +34,7 @@ set smartindent
 set smarttab
 
 "  Listchars
-set listchars=tab:\¦\ ,trail:·
+set listchars=tab:\|-,trail:­
 
 "  Syntax
 syntax on
@@ -115,9 +115,10 @@ let g:mapleader="\<space>"
 nmap <Leader>x :q<CR>
 nmap <Leader>c :close<CR>
 nmap <Leader>z :write<CR>
-nmap <Leader>h :set hlsearch!<CR>
-nmap <Leader>n :set number!<CR>
-nmap <Leader>r :set relativenumber!<CR>
+nmap <Leader>th :set hlsearch!<CR>
+nmap <Leader>tn :set number!<CR>
+nmap <Leader>tr :set relativenumber!<CR>
+nmap <Leader>tl :set list!<CR>
 " }}}
 " VARIABLES {{{
 " let g:python3_host_prog = '/usr/bin/python3'
@@ -141,16 +142,19 @@ Plug 'junegunn/vim-plug'
 " Plugin 'sirver/UltiSnips'
 call plug#end()
 
+" QuickRun
+" temporary
+nmap <Leader>r :QuickRun<CR>
+
 " Netrw
 let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_liststyle=3
 let g:netrw_winsize=30
 
-nmap <Leader>t :Lexplore<CR>
-
+nmap <Leader>e :Lexplore<CR>
 " Unite
-let g:unite_source_history_yank_enable = 1
+let g:unite_source_history_yank_enable=1
 
 nmap <Leader>p :Unite -start-insert file_rec/neovim<CR>
 nmap <Leader>o :Unite -start-insert file<CR>
