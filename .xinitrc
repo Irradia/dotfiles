@@ -47,7 +47,7 @@ i3s() {
 	hsetroot -fill ~/Media/Images/wallpapers/lake.jpg              &
 	# ~/tmp/git/clipmenu/clipmenud                                   &
 	mpd ~/.mpd/mpd.conf                                            &
-	fcitx  > ~/.local/fcitx.log 2>&1                               &
+	# fcitx  > ~/.local/fcitx.log 2>&1                               &
 	exec i3
 }
 

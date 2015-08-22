@@ -21,7 +21,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<span color="#acada1"><b>%s</b></span>%p\n%b"
+    format = "<span color="#f1ebeb"><b>%s</b></span>%p\n%b"
     
     # Sort messages by urgency.
     sort = yes
@@ -176,12 +176,12 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#272822"
-    foreground = "#f1ebeb"
+    foreground = "#cfd0c2"
     timeout = 15
 
 [urgency_normal]
     background = "#272822"
-    foreground = "#acada1"
+    foreground = "#55bcce"
     timeout = 30
 
 [urgency_critical]
