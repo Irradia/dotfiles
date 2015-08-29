@@ -175,7 +175,7 @@ bar {
 	status_command ~/bin/timeloop
 	id zero
 
-	font pango:Terminus 8
+	font pango:Tewi 8
 	
 	# height 20
 

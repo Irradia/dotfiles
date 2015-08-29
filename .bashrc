@@ -94,6 +94,11 @@ vman() {
 # 	fi
 # }
 
+#sp - spell check string with aspell
+# usage: sp <string>
+sp() {
+	echo "$@" | aspell pipe
+}
 	
 #man - colored manual pages
 # usage: man <command>

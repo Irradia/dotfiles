@@ -32,9 +32,10 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set smarttab
+set noexpandtab
 
 "  Listchars
-set listchars=tab:\|-,trail:­
+set listchars=tab:\|-,trail:@
 
 "  Syntax
 syntax on
@@ -59,7 +60,10 @@ set foldmethod=syntax
 set foldcolumn=0
 
 " Completion
-set dictionary=/usr/share/dict/cracklib-small
+set dictionary=/usr/share/dict/words
+
+" Regex
+set magic
 
 "  Clean backups
 set backup
