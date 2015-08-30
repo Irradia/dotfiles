@@ -45,8 +45,8 @@ bindsym $mod+x kill
 
 # bindsym $mod+o exec i3-msg open
 
-bindsym --release Print exec --no-startup-id scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/tmp/scrots' ; exec notify-send -u low 'screenshot' 'root dumped'
-bindsym --release Shift+Print exec --no-startup-id scrot -s '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/tmp/scrots' ; exec notify-send -u low 'screenshot' 'will dump selection'
+bindsym --release Print exec --no-startup-id scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/tmp/scr' ; exec notify-send -u low 'screenshot' 'root dumped'
+bindsym --release Shift+Print exec --no-startup-id scrot -s '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/tmp/scr' ; exec notify-send -u low 'screenshot' 'will dump selection'
 
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
