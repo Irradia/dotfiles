@@ -13,7 +13,7 @@
 set $mod Mod4
 # }}}
 # Misc {{{
-font pango:Terminus 8
+font pango:Tewi 8
 
 new_window pixel 3
 new_float normal 0
@@ -175,9 +175,9 @@ bar {
 	status_command ~/bin/timeloop
 	id zero
 
-	font pango:Terminus 8
+	font pango:Tewi 8
 	
-	height 15
+	# height 15
 
 	mode hide
 	hidden_state hide
@@ -199,8 +199,8 @@ bar {
 			focused_workspace  #272822 #272822 #cfd0c2
 			active_workspace   #272822 #272822 #cfd0c2
 			inactive_workspace #272822 #272822 #acada1
-			# urgent_workspace   #272822 #cfd0c2 #dc2566
-			urgent_workspace   #272822 #272822 #dc2566
+			urgent_workspace   #272822 #cfd0c2 #dc2566
+			# urgent_workspace   #272822 #272822 #dc2566
 		}
 }
 # }}}

@@ -1,5 +1,5 @@
 [global]
-    font = Terminus 9
+    font = Tewi 8
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -21,7 +21,8 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<span color="#f1ebeb"><b>%s</b></span>%p\n%b"
+    # format = "<span color="#f1ebeb"><b>%s</b></span>%p\n%b"
+    format = "<b>%s</b>%p\n%b"
     
     # Sort messages by urgency.
     sort = yes

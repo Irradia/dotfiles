@@ -13,7 +13,7 @@ rofi.opacity:              100
 rofi.width:                50
 rofi.lines:                15
 rofi.columns:              3
-rofi.font:                 terminus 8
+rofi.font:                 tewi 8
 rofi.color-enabled:        false
 !!! WHAT
 ! !                  bg             fg             bgalt          hlbg           hlfg
@@ -106,14 +106,15 @@ URxvt.cursorBlink:        true
 
 URxvt.urgentOnBell:       true
 
-! URxvt.geometry:           80x26
+! URxvt.geometry:           80x25
 
 ! URxvt.font:               xft:terminus:size=14
 ! symbola:size=14
-URxvt.font:               xft:terminus:size=8
+! URxvt.font:               xft:terminus:size=8
+URxvt.font:               xft:tewi:size=8
 ! terminus:size=14
 fixed:size=8
-URxvt.boldFont:           xft:terminus:bold:size=8
+URxvt.boldFont:           xft:tewi:bold:size=8
 ! }}}
 
 ! vim: fdm=marker
