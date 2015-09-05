@@ -66,8 +66,8 @@ set dictionary=/usr/share/dict/words
 set magic
 
 "  Clean backups
-set backup
-set backupdir=~/.nvim/backup
+" set backup
+" set backupdir=~/.nvim/backup
 set directory=~/.nvim/tmp
 set viminfo='100,<50,s10,h,n$HOME/.nvim/.nviminfo
 set history=256
