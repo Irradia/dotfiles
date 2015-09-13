@@ -37,10 +37,10 @@ i3s() {
 	xset r rate 300 40                                             &
 	xset s 2530 2530                                               &
 	xset dpms 2530 2530 2530                                       &
+	setxkbmap -option terminate:ctrl_alt_bksp                      &
 	xautolock -time 45 -locker ~/bin/suppressed-lock -notify 300 \
 	-notifier 'notify-send --urgency normal --expire-time 300000 \
 	"Lockdown in 5 minutes" "Inactivity lock initialized"'         &
-	setxkbmap -option terminate:ctrl_alt_bksp                      &
 	compton -b                                                     &
 	redshift                                                       &
 	unclutter -idle 5 -jitter 10 -root                             &

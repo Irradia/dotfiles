@@ -8,31 +8,43 @@
 
 
 !Rofi {{{
-rofi.modi:                 window,run,ssh
+rofi.modi:                 window, run, ssh
+! rofi.modi:                 window,run,ssh,mth:~/bin/mthmen.sh
 rofi.opacity:              100
 rofi.width:                50
 rofi.lines:                15
-rofi.columns:              3
+rofi.columns:              1
 rofi.font:                 terminus 8
-rofi.color-enabled:        false
-!!! WHAT
-! !                  bg             fg             bgalt          hlbg           hlfg
-! rofi.color-normal: argb:ff48483e, argb:ff76715e, argb:ff48483e, argb:ff48483e, argb:ffcfd0c2
-! rofi.color-urgent: argb:ff48483e, argb:ff76715e, argb:ff48483e, argb:ff48483e, argb:ffcfd0c2
-! rofi.color-active: argb:ff48483e, argb:ffcfd0c2, argb:ff48483e, argb:ff48483e, argb:ffcfd0c2
-! !                  bg             border
-! rofi.color-window: argb:ff48483e, argb:00ffffff
-! rofi.color-normal: #fdf6e3,  #002b36,  #eee8d5,  #586e75,  #eee8d5
-! rofi.color-urgent: #fdf6e3,  #dc322f,  #eee8d5,  #dc322f,  #fdf6e3
-! rofi.color-active: #fdf6e3,  #268bd2,  #eee8d5,  #268bd2,  #fdf6e3
-! !                  'background', 'border'
-! rofi.color-window: #fdf6e3,      #002b36
-rofi.fg:                   #76715e
-rofi.bg:                   #48483e
-rofi.bgalt:                #48483e
-rofi.hlfg:                 #cfd0c2
-rofi.hlbg:                 #48483e
-rofi.bc:                   #f1ebeb
+rofi.color-enabled:        true
+!                  bg             fg             bgalt          hlbg           hlfg
+rofi.color-normal: argb:ff272822, argb:ff76715e, argb:dd272822, argb:ff272822, argb:ffcfd0c2
+rofi.color-urgent: argb:ff272822, argb:ffdc2566, argb:dd272822, argb:ff272822, argb:ffdc2566
+rofi.color-active: argb:ff272822, argb:ff55bcce, argb:dd272822, argb:ff272822, argb:ff55bcce
+!                  bg
+rofi.color-window: argb:ff272822
+! rofi.color-window: argb:dd272822, argb:ff00ff00, argb:00ff0000
+
+rofi.separator-style:       solid
+
+! rofi.fg:                   #76715e
+! rofi.bg:                   #48483e
+! rofi.bgalt:                #48483e
+! rofi.hlfg:                 #cfd0c2
+! rofi.hlbg:                 #48483e
+! rofi.bc:                   #f1ebeb
+!
+! rofi.fg-active:            #268BD2
+! rofi.fg-urgent:            #DC323F
+! rofi.hlfg-active:          #FDFE4
+! rofi.hlfg-urgent:          #FDF6E3
+! rofi.bg-active:            #FDF6E3
+! rofi.bg-urgent:            #FDF6E3
+! rofi.hlbg-active:          #268BD2
+! rofi.hlbg-urgent:          #DC322F
+! rofi.bgalt:                #48483e
+! rofi.hlfg:                 #cfd0c2
+! rofi.hlbg:                 #48483e
+! rofi.bc:                   #f1ebeb
 rofi.bw:                   0
 rofi.location:             0
 rofi.padding:              0
@@ -43,16 +55,18 @@ rofi.terminal:             urxvt
 rofi.ssh-client:           ssh
 rofi.ssh-command:          {terminal} -e {ssh-client} {host}
 rofi.run-command:          {cmd}
-rofi.run-list-command:     
+rofi.run-list-command:
 rofi.run-shell-command:    {terminal} -e {cmd}
-rofi.disable-history:      false
-rofi.levenshtein-sort:     false
+rofi.disable-history:      true
+rofi.levenshtein-sort:     true
 rofi.case-sensitive:       false
 rofi.sidebar-mode:         true
 rofi.lazy-filter-limit:    5000
 rofi.eh:                   1
 rofi.auto-select:          false
+rofi.line-margin:          3
 rofi.pid:                  /run/user/1000/rofi.pid
+rofi.hide-scrollbar:       true
 rofi.key-window:           
 rofi.key-run:              
 rofi.key-ssh:              

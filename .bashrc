@@ -38,8 +38,7 @@ PS3='\[\e[32m\] >\[\e[0m\] '
 PS4='\[\e[32m\] +\[\e[0m\] '
 # }}}
 # Functions {{{
-
-#whatcolorisit - thing based on http://whatcolourisit.scn9a.org/
+# whatcolorisit - thing based on http://whatcolourisit.scn9a.org/
 # usage: whatcolorisit
 whatcolorisit() { 
 	while :
@@ -51,8 +50,7 @@ whatcolorisit() {
 			sleep 1
 		done
 }
-
-#stopkill - send kill signal 19 and then 9 to search given
+# stopkill - send kill signal 19 and then 9 to search given
 # usage: stopkill <valid pkill search>
 stopkill() {
 	if [ -n "$@" ] ; then
@@ -60,30 +58,28 @@ stopkill() {
 		pkill -9 $@
 	fi
 }
-#go2bed - sleep for <variable> then lock and suspend system to ram
+# go2bed - sleep for <variable> then lock and suspend system to ram
 # usage: go2bed <valid sleep string>
 go2bed() {
 	sleep $1 | pv -t
 	~/bin/suppressed-lock
 	systemctl suspend
 }
-
-#fucking-keyboard - when your keyboard goes idle and xorg freaks out thus forgetting your settings
+# fucking-keyboard - when your keyboard goes idle and xorg freaks out thus forgetting your settings
 # usage: fucking-keyboard
 fucking-keyboard() {
-	xset -b                 
-	xset r rate 300 40      
+	xset b 0
+	xset r rate 300 40
 	xset s 2530
-	xset +dpms              
+	xset +dpms
 	xset dpms 2530 2530 2530
 }
-#vman - colored manual pages in nvim
+# vman - colored manual pages in nvim
 # usage: vman <command>
-vman() { 
+vman() {
 	nvim <(man "$@") +"setf man"
 }
-
-#ranger - start new ranger isntance only if theres not one running already
+# ranger - start new ranger isntance only if theres not one running already
 # usage: ranger
 # ranger() {
 # 	if [ -z "$RANGER_LEVEL" ]
@@ -93,14 +89,12 @@ vman() {
 # 		exit
 # 	fi
 # }
-
-#sp - spell check string with aspell
+# sp - spell check string with aspell
 # usage: sp <string>
 sp() {
 	echo "$@" | aspell pipe
 }
-	
-#man - colored manual pages
+# man - colored manual pages
 # usage: man <command>
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -111,6 +105,28 @@ man() {
     LESS_TERMCAP_ue=$'\E[0m' \
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
+}
+# rankmir - rank mirrors quickly
+# usage: rankmir
+# rankmir(){
+# 	TODO
+# }
+# xrldb - reload Xresource files
+# usage: xrldb
+xrldb() {
+	xrdb -load ~/.Xresources &&
+	xrdb -merge ~/.urxvt/colors/monokai
+}
+# urxftsw - switch urxvt font
+# usage: urxftsw
+urxftsw() {
+	case $@ in
+		-p|-print)
+			echo -e "\033]710;$(xfontsel -print)\033\\"
+			;;
+		*)
+			echo -e "\033]710;$@\033\\"
+	esac
 }
 # }}}
 
