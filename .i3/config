@@ -32,6 +32,7 @@ force_display_urgency_hint 750 ms
 # }}}
 # Non-wm binds {{{
 bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -name float
 bindsym $mod+Escape exec ~/bin/suppressed-lock
 
 # bindsym $mod+d exec dmenu_run -i -h 12 -uh 1 -p "$" -fn "Terminus-8:normal" -nb \#48483e -nf \#76715e -sb \#48483e -sf \#cfd0c2 -uc \#a7e22e
@@ -114,6 +115,9 @@ bindsym $mod+equal scratchpad show
 
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+# }}}
+# Window specifics {{{
+for_window [instance="float"] floating enable;
 # }}}
 # Colors {{{
 
