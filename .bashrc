@@ -13,15 +13,16 @@ export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
 # }}}
 # Aliases {{{
-alias ls='ls --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
-alias ll='ls -l --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
-alias la='ls -la --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
+alias ls='ls -F --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
+# alias ll='ls -lF --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
+# alias la='ls -laF --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
 alias grep='grep --color=tty -d skip'
 alias rm='rm -I'
 alias cp='cp -rvi'
 alias mv='mv -i'
 alias df='df -h'
 alias free='free -m'
+alias tree='tree -CF'
 alias q='exit'
 alias r='ranger'
 alias e='$EDITOR'
@@ -89,6 +90,7 @@ vman() {
 # 		exit
 # 	fi
 # }
+
 # sp - spell check string with aspell
 # usage: sp <string>
 sp() {
@@ -111,6 +113,7 @@ man() {
 # rankmir(){
 # 	TODO
 # }
+
 # xrldb - reload Xresource files
 # usage: xrldb
 xrldb() {
