@@ -26,6 +26,10 @@
 /.mplayer/*
 !.mplayer/config
 
+!.ncmpcpp/
+/.ncmpcpp/*
+!.ncmpcpp/config
+
 !.nvim/
 /.nvim/*
 !.nvim/nvimrc
