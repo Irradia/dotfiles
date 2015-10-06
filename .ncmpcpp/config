@@ -497,7 +497,7 @@ main_window_color = green
 #
 #main_window_highlight_color = yellow
 #
-progressbar_color = black
+progressbar_color = white
 #
 progressbar_elapsed_color = green
 #

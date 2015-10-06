@@ -1,0 +1,16 @@
+#! /bin/env bash
+
+ROOT=$(lsw -r)
+BARW=400
+BARH=4
+DISW=$(wattr w $ROOT)
+DISH=$(wattr h $ROOT)
+GEOSTR=$BARHx$BARW+2+$(($DISH - $BARH - 5))
+
+# for x in {1..5}
+# do
+# 	echo "^fg(red)The quick brown fox jumped over the lazy dog"
+# done | dzen2 -x $(($DISW/2 - $BARW/2)) -y 0 -w $BARW -fn "Terminus" -p -sa c -l 17
+mpc -f '%file%' current | skroll -rl | dzen2 -x $(($DISW/2 - $BARW/2)) -y 0 -w $BARW -fn "Terminus" -p -fg \#ffff00 -sa c 
+
+# vim: syntax=sh

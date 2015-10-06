@@ -13,30 +13,20 @@ GEOSTR=$BARHx$BARW+$(($(($DISW/2)) - $(($BARW/2))))+2
 # GEOSTR=$BARHx$BARW+$(($(($DISW/2)) - $BARW))+4
 # GEOSTR=100x12+1+1
 
+# echo -n 0 > /tmp/lemonbarstate && chmod 700 /tmp/lemonbarstate
+state=0
 
-btime() {
-	date "+%H:%M:%S"
-}
-
-bdate() {
-	date "+%d/%m/%y"
-}
-
-bmpd() {
-	mpc current
-}
-
-bbar() {
-	while :; do
-		date "+%d/%m/%y"
-		# echo "%{c}%{A:$(bdate):}$(btime)%{A}"
-		sleep 1
-	done | bar -B $BG -F $FG -f $FONT -g $GEOSTR
-}
-
-while :; do
-	echo "%{c}$(btime) %{F#FF71736a}|%{F} $(bdate)"
+while true
+do
+	# echo "%{c}$(btime) %{F#FF71736a}|%{F} $(bdate)"
 	# echo "$(date "+%d/%m/%y")"
-	# echo "%{c}%{A:$(bdate):}$(btime)%{A}"
+	# if [ $state = 0 ]; then
+	if [ $state = 0 ]; then
+		echo "%{c}%{A:state=1:}$(date "+%H:%M:%S")%{A}"
+	else
+		echo "%{c}%{A:state=0:}$(date "+%d/%m/%y")%{A}"
+	fi
 	sleep 1
-done | bar -B $BG -F $FG -f $FONT -g $GEOSTR
+done \
+| lemonbar -d -B $BG -F $FG -f $FONT -g $GEOSTR \
+| while read line; do eval "$line"; echo "$line"; echo "$state"; done

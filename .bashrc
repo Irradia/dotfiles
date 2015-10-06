@@ -31,6 +31,9 @@ alias alertoff='PS1="${PS1:0:-2}"'
 
 alias clock='while :; do date "+%T"; sleep 1; done'
 alias lock='~/bin/suppressed-lock'
+alias webcam='mplayer -cache 128 -tv driver=v4l2:width=640:height=480:outfmt=i420 -vo xv tv://'
+alias kref='cat ~/Media/Documents/kana.md'
+alias starmux='~/bin/starmux'
 # }}}
 # Prompt {{{
 PS1='\[\e[32m\] \$\[\e[0m\] '

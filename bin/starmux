@@ -1,0 +1,15 @@
+#! /bin/env bash
+
+tmux new-session -s monitor \; \
+	rename-window 'main'                                             \; \
+	new-window -a -d -n 'rtor' 'rtorrent && bash'                    \; \
+	respawn-pane -k 'tail -f ~/.local/share/xorg/Xorg.0.log && bash' \; \
+	split-window -v -l 20 'htop && bash'                             \; \
+	split-window -h -l 81 'ncmpcpp && bash'                          \; \
+	select-pane -U                                                   \; \
+	split-window -h -l 81 'sudo -k iftop && bash'                    \; \
+	select-pane -L                                                   \; \
+	split-window -v 'sudo -k journalctl --system --follow && bash'   \; \
+	select-pane -U                                                   \; \
+	split-window -v 'journalctl --user --follow && bash'             \; \
+	select-pane -L                                                   \; \

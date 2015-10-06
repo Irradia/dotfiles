@@ -79,6 +79,8 @@ bindsym $mod+f layout toggle split
 bindsym $mod+u fullscreen toggle
 bindsym $mod+Shift+u fullscreen toggle global
 
+bindsym $mod+i sticky toggle
+
 floating_modifier $mod
 bindsym $mod+y floating toggle
 bindsym $mod+grave focus mode_toggle
