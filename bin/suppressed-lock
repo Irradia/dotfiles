@@ -1,8 +1,11 @@
 #! /bin/bash
 
-sflock
+MYCOMMAND='xscreensaver-command -lock'
+# $MYCOMMAND='sflock'
 
-pgrep sflock > /dev/null
+$MYCOMMAND
+
+pgrep "$MYCOMMAND" > /dev/null
 
 while [ $? -eq 0 ]
 do
