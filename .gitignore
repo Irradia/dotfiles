@@ -30,13 +30,6 @@
 /.ncmpcpp/*
 !.ncmpcpp/config
 
-!.nvim/
-/.nvim/*
-!.nvim/nvimrc
-!.nvim/colors/
-/.nvim/colors/*
-!.nvim/colors/usmyck.vim
-
 !.urxvt/
 /.urxvt/*
 !.urxvt/colors/
@@ -67,6 +60,12 @@
 !.config/htop/
 /.config/htop/*
 !.config/htop/htoprc
+!.config/nvim/
+/.config/nvim/*
+!.config/nvim/nvimrc
+!.config/nvim/colors/
+/.config/nvim/colors/*
+!.config/nvim/colors/usmyck.vim
 !.config/mpd/
 /.config/mpd/*
 !.config/mpv/

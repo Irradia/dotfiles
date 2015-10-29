@@ -11,6 +11,7 @@ export BROWSER=chromium
 export HISTSIZE=4096
 export HISTFILESIZE=${HISTSIZE}
 export HISTCONTROL=ignoreboth
+export XDG_CONFIG_HOME=~/.config
 # }}}
 # Aliases {{{
 alias ls='ls -F --color=auto --group-directories-first --time-style=+"%m.%d %H:%M" --classify'
@@ -81,7 +82,7 @@ fucking-keyboard() {
 # vman - colored manual pages in nvim
 # usage: vman <command>
 vman() {
-	nvim <(man "$@") +"setf man"
+	nvim +"Man $@"
 }
 # ranger - start new ranger isntance only if theres not one running already
 # usage: ranger

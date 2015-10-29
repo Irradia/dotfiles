@@ -13,7 +13,7 @@ rofi.modi:                 window, run, ssh
 rofi.opacity:              100
 rofi.width:                50
 rofi.lines:                15
-rofi.columns:              1
+rofi.columns:              3
 rofi.font:                 terminus 8
 rofi.color-enabled:        true
 !                  bg             fg             bgalt          hlbg           hlfg
@@ -21,10 +21,10 @@ rofi.color-normal: argb:ff272822, argb:ff76715e, argb:ef272822, argb:ff272822, a
 rofi.color-urgent: argb:ff272822, argb:ffdc2566, argb:ef272822, argb:ff272822, argb:ffdc2566
 rofi.color-active: argb:ff272822, argb:ff55bcce, argb:ef272822, argb:ff272822, argb:ff55bcce
 !                  bg
-rofi.color-window: argb:ff272822
+rofi.color-window: argb:cc272822
 ! rofi.color-window: argb:dd272822, argb:ff00ff00, argb:00ff0000
 
-rofi.separator-style:       solid
+rofi.separator-style:       dash
 
 ! rofi.fg:                   #76715e
 ! rofi.bg:                   #48483e
