@@ -49,6 +49,7 @@ i3s() {
 	# ~/tmp/git/clipmenu/clipmenud                                   &
 	mpd ~/.mpd/mpd.conf                                            &
 	# fcitx  > ~/.local/fcitx.log 2>&1                               &
+	dunst                                                          &
 	exec i3
 }
 
