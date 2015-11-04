@@ -39,6 +39,9 @@ bindsym $mod+Escape exec ~/bin/suppressed-lock
 bindsym $mod+d exec rofi -modi run -show run
 bindsym $mod+Shift+d exec "rofi -modi window,run,ssh -show window"
 
+bindsym $mod+bracketright exec ~/bin/mathmen
+# bindsym $mog+bracketleft TODO: spell check script
+
 # bindsym $mod+q exec ~/tmp/git/clipmenu/clipmenu
 
 bindsym $mod+shift+z exec killw $(pfw)
@@ -80,6 +83,8 @@ bindsym $mod+u fullscreen toggle
 bindsym $mod+Shift+u fullscreen toggle global
 
 bindsym $mod+i sticky toggle
+
+bindsym $mod+o move absolute position center
 
 floating_modifier $mod
 bindsym $mod+y floating toggle

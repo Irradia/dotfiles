@@ -1,0 +1,15 @@
+#! /bin/env bash
+
+# TODO: check if problem is same as answer and exit/copy to clipboard
+
+ROFI="rofi -dmenu -p clc:"
+
+while problem=$(echo -e "$ternary" | $ROFI -mesg "$problem")
+do
+	if answer=$(calc -pd "$problem"); then
+		ternary="$answer\n$ternary"
+	elif [ "$answer" = "$problem" ]; then
+		exit
+	fi
+		# echo -n "$ternary" | xsel -bi
+done
