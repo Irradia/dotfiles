@@ -1,16 +1,16 @@
 #! /bin/env bash
 
 tmux new-session -s monitor \; \
-	rename-window 'main'                                             \; \
-	new-window -a -d -n 'amix' 'alsamixer && bash'                   \; \
-	new-window -a -d -n 'rtor' 'rtorrent && bash'                    \; \
-	respawn-pane -k 'tail -f ~/.local/share/xorg/Xorg.0.log && bash' \; \
-	split-window -v -l 20 'htop && bash'                             \; \
-	split-window -h -l 81 'ncmpcpp && bash'                          \; \
-	select-pane -U                                                   \; \
-	split-window -h -l 81 'sudo -k iftop && bash'                    \; \
-	select-pane -L                                                   \; \
-	split-window -v 'sudo -k journalctl --system --follow && bash'   \; \
-	select-pane -U                                                   \; \
-	split-window -v 'journalctl --user --follow && bash'             \; \
-	select-pane -L                                                   \; \
+	rename-window 'main'                                                          \; \
+	new-window -a -d -n 'amix' 'alsamixer && bash'                                \; \
+	new-window -a -d -n 'rtor' 'rtorrent && bash'                                 \; \
+	respawn-pane -k 'tail --lines 2048 -f ~/.local/share/xorg/Xorg.0.log && bash' \; \
+	split-window -v -l 20 'htop && bash'                                          \; \
+	split-window -h -l 81 'ncmpcpp && bash'                                       \; \
+	select-pane -U                                                                \; \
+	split-window -h -l 81 'sudo -k iftop && bash'                                 \; \
+	select-pane -L                                                                \; \
+	split-window -v 'sudo -k journalctl --lines 2048 --system --follow && bash'   \; \
+	select-pane -U                                                                \; \
+	split-window -v 'journalctl --lines 2048 --user --follow && bash'             \; \
+	select-pane -L                                                                \; \
