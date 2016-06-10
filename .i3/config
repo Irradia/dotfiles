@@ -182,7 +182,7 @@ bindsym $mod+Shift+backslash bar mode toggle zero
 # }
 
 bar {
-	i3bar_command i3bar
+	i3bar_command i3bar -t
 	status_command ~/bin/timeloop
 	id zero
 
@@ -203,14 +203,14 @@ bar {
 
 
 	colors {
-			background #272822
-			statusline #f1ebeb
+			background #27282255
+			statusline #f1ebebff
 			separator #acada1
-			# colorclass       border  backgr. text
-			focused_workspace  #272822 #272822 #cfd0c2
-			active_workspace   #272822 #272822 #cfd0c2
-			inactive_workspace #272822 #272822 #acada1
-			urgent_workspace   #272822 #cfd0c2 #dc2566
+			# colorclass       border    backgr.   text
+			focused_workspace  #272822dd #272822dd #cfd0c2ff
+			active_workspace   #272822bb #272822bb #cfd0c2ff
+			inactive_workspace #27282288 #27282288 #acada1ff
+			urgent_workspace   #272822ff #cfd0c2ff #dc2566ff
 			# urgent_workspace   #272822 #272822 #dc2566
 		}
 }

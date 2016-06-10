@@ -38,7 +38,7 @@ set noexpandtab
 set listchars=tab:\|-,trail:@
 
 "  Syntax
-syntax on
+syntax off
 set synmaxcol=80
 
 "  Status stuff
@@ -215,5 +215,6 @@ endif
 " }}}
 " MISC {{{
 colorscheme usmyck
+syntax off
 " }}}
 " vim: fdm=marker syntax=vim
