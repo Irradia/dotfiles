@@ -30,6 +30,7 @@ alias e='$EDITOR'
 alias alerton='PS1="$PS1\a"'
 alias alertoff='PS1="${PS1:0:-2}"'
 alias mupdf='mupdf -C fdf6e3'
+alias youtube-viewer='youtube-viewer -C --highlight --video-player=mpv -4'
 
 alias clock='while :; do date "+%T"; sleep 1; done'
 alias lock='~/bin/suppressed-lock'
