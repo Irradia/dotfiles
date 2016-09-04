@@ -48,6 +48,7 @@ i3s() {
 	hsetroot -fill ~/Media/Images/wallpapers/lake.jpg              &
 	# ~/tmp/git/clipmenu/clipmenud                                   &
 	mpd ~/.mpd/mpd.conf                                            &
+	mpdas -c ~/.mpdasrc/mpdasrc                                      &
 	# fcitx  > ~/.local/fcitx.log 2>&1                               &
 	dunst                                                          &
 	exec i3

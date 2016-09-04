@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+~/tmp/dow/software/FightCade/fightcade
+exit

@@ -93,6 +93,9 @@ bindsym --whole-window $mod+button2 floating toggle
 
 bindsym $mod+a focus parent
 bindsym $mod+s focus child
+
+bindsym $mod+t border normal 0
+bindsym $mod+g border pixel 3
 # }}}
 # Workspaces {{{
 bindsym $mod+1 workspace 1:1
@@ -195,7 +198,7 @@ bar {
 	modifier Mod3
 
 	position top
-	tray_output none
+	tray_output primary
 	workspace_buttons yes
 	strip_workspace_numbers yes
 	binding_mode_indicator yes
