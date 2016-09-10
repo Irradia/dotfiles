@@ -1,14 +1,17 @@
 #! /bin/env bash
 
+# before rtor window
+# new-window -a -d -n 'pmix' 'pulsemixer && bash'
+
 tmux new-session -s monitor \; \
 	rename-window 'main'                                                          \; \
-	new-window -a -d -n 'pmix' 'pulsemixer && bash'                                \; \
 	new-window -a -d -n 'rtor' 'rtorrent && bash'                                 \; \
 	respawn-pane -k 'tail --lines 2048 -f ~/.local/share/xorg/Xorg.0.log && bash' \; \
 	split-window -v -l 20 'htop && bash'                                          \; \
 	split-window -h -l 81 'ncmpcpp && bash'                                       \; \
 	select-pane -U                                                                \; \
 	split-window -h -l 81 'sudo -k iftop && bash'                                 \; \
+	split-window -v -l 20 'pulsemixer && bash'                                    \; \
 	select-pane -L                                                                \; \
 	split-window -v 'sudo -k journalctl --lines 2048 --system --follow && bash'   \; \
 	select-pane -U                                                                \; \
