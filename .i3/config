@@ -36,8 +36,8 @@ bindsym $mod+Shift+Return exec urxvt -name float
 bindsym $mod+Escape exec ~/bin/suppressed-lock
 
 # bindsym $mod+d exec dmenu_run -i -h 12 -uh 1 -p "$" -fn "Terminus-8:normal" -nb \#48483e -nf \#76715e -sb \#48483e -sf \#cfd0c2 -uc \#a7e22e
-bindsym $mod+d exec rofi -modi run -show run
-bindsym $mod+Shift+d exec "rofi -modi window,run,ssh -show window"
+bindsym $mod+d exec "rofi  -modi window,run,ssh -show run"
+bindsym $mod+Shift+d exec "rofi  -modi window,run,ssh -show window"
 
 bindsym $mod+bracketright exec ~/bin/mathmen
 # bindsym $mog+bracketleft TODO: spell check script
@@ -128,6 +128,7 @@ bindsym $mod+Shift+Tab workspace prev
 # }}}
 # Window specifics {{{
 for_window [instance="float"] floating enable;
+for_window [title="rofi"] floating enable;
 # }}}
 # Colors {{{
 
@@ -173,7 +174,12 @@ mode "gaps" {
 	bindsym r mode "resize"
 }
 
+mode "fl studio" {
+	bindsym Escape mode "default"
+}
+
 bindsym $mod+r mode "resize"
+bindsym $mod+slash mode "fl studio"
 # }}}
 # Bar {{{
 
