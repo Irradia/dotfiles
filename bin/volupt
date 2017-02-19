@@ -1,0 +1,8 @@
+#! /bin/env bash
+
+VOLOUT="$(amixer get Master | grep '%' | cut -d ' ' -f 7 | sed -e :0 -e '/,.*,.*,/b' -e N -e 's/\n/ /' -e b0 -)"
+
+case $1 in
+	+) amixer set Master 5%+ > /dev/null && notify-send -u low Volume "${VOLOUT}";;
+	-) amixer set Master 5%- > /dev/null && notify-send -u low Volume "${VOLOUT}";;
+esac

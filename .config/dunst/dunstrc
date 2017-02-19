@@ -209,6 +209,10 @@
 # to "".
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
+[discord-message]
+	appname = "Discord*"
+	urgency = low
+	timeout = 0
 
 # [skype-sign-on]
 # 	category = 'presence.online'

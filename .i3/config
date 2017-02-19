@@ -40,7 +40,7 @@ bindsym $mod+d exec "rofi  -modi window,run,ssh -show run"
 bindsym $mod+Shift+d exec "rofi  -modi window,run,ssh -show window"
 
 bindsym $mod+bracketright exec ~/bin/mathmen
-# bindsym $mog+bracketleft TODO: spell check script
+bindsym $mod+bracketleft exec clerk
 
 # bindsym $mod+q exec ~/tmp/git/clipmenu/clipmenu
 
@@ -52,13 +52,13 @@ bindsym $mod+x kill
 bindsym --release Print exec --no-startup-id scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/tmp/scr' ; exec notify-send -u low 'screenshot' 'root dumped'
 bindsym --release Shift+Print exec --no-startup-id scrot -s '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/tmp/scr' && exec notify-send -u low 'screenshot' 'selection dumped'
 
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioRaiseVolume exec ~/bin/volupt +
+bindsym XF86AudioLowerVolume exec ~/bin/volupt -
 bindsym XF86AudioMute exec amixer set Master toggle
 
 bindsym $mod+Shift+equal exec mpc toggle
 
-# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # }}}
 # Containers {{{
@@ -200,7 +200,7 @@ bar {
 	# height 15
 
 	mode hide
-	hidden_state hide
+	hidden_state show
 	modifier Mod3
 
 	position top

@@ -45,6 +45,14 @@ PS3='\[\e[32m\] >\[\e[0m\] '
 PS4='\[\e[32m\] +\[\e[0m\] '
 # }}}
 # Functions {{{
+# dl - wget wrapper for easy open directory downloading
+dl () {
+	wget -c -r -nv -np -nc -e robots=off --reject index.html,index.html* -P /home/jenny/tmp/dow/data/ $@
+}
+# dln - wget wrapper for easy open directory downloading CHECKS FILE INTEGRITY
+dln () {
+	wget -c -r -nv -np -N --no-if-modified-since -e robots=off --reject index.html,index.html* -P /home/jenny/tmp/dow/data/ $@
+}
 # whatcolorisit - thing based on http://whatcolourisit.scn9a.org/
 # usage: whatcolorisit
 whatcolorisit() { 
