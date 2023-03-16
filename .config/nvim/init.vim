@@ -8,7 +8,7 @@
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages.
-runtime! archlinux.vim
+" runtime! archlinux.vim
 
 " If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
 " Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
@@ -38,8 +38,8 @@ set noexpandtab
 set listchars=tab:\|-,trail:@
 
 "  Syntax
-syntax off
-set synmaxcol=80
+syntax on
+" set synmaxcol=80
 
 "  Status stuff
 set laststatus=2
@@ -60,7 +60,7 @@ set foldmethod=syntax
 set foldcolumn=0
 
 " Completion
-set dictionary=/usr/share/dict/words
+" set dictionary=/usr/share/dict/words
 
 " Regex
 set magic
@@ -77,16 +77,25 @@ set history=256
 " INTERFACE {{{
 
 " Formatting
-call matchadd('ColorColumn', '\%81v', 100)
+" Highlight text past 80 characters
+" call matchadd('ColorColumn', '\%81v', 100)
 
 "  Terminal
 
 " force 256 colors
-set t_Co=256
+" set t_Co=256
 " set colorscheme to tweaked smyck
 " MOVED TO MISC TO OVERWRITE WEIRDNESS WITH VIM-PLUG
 
 "  Gui
+
+" Neovide options
+if exists("g:neovide")
+    " Put anything you want to happen only in Neovide here
+	let g:neovide_cursor_animation_length=0.05
+	" let g:neovide_cursor_vfx_mode = "sonicboom"
+	let g:neovide_scale_factor = 0.75
+endif
 
 " gui options
 if has("gui_running")
@@ -97,7 +106,7 @@ if has("gui_running")
 	set guioptions-=L  "remove left-hand scroll bar
 	set guiheadroom=0
 
-	colorscheme molokai
+	colorscheme efficient
 endif
 " }}}
 " NATIVE BINDINGS {{{
@@ -105,7 +114,7 @@ endif
 "  Command maps
 
 " w!! to write as superuser
-cmap w!! w !sudo tee % >/dev/null
+" cmap w!! w !sudo tee % >/dev/null
 
 "  Key maps
 
@@ -133,22 +142,24 @@ nmap <Leader>tl :set list!<CR>
 " PLUGINS {{{
 
 " Vundle
-call plug#begin('~/.config/nvim/bundle')
+call plug#begin('C:\Users\jenny\AppData\Local\nvim\plugins')
 " Plug 'severin-lemaignan/vim-minimap'
 " Plug 'tomtom/tcomment_vim'
 " Plugin 'sirver/UltiSnips'
+Plug 'mtdl9/vim-log-highlighting'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Shougo/unite.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-plug'
-Plug 'ledger/vim-ledger'
+" Plug 'ledger/vim-ledger'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " QuickRun
@@ -184,7 +195,7 @@ function! s:goyo_enter()
 endfunction
 function! s:goyo_leave()
 	set scrolloff=6
-	colorscheme usmyck
+	colorscheme efficient
 endfunction
 
 autocmd User GoyoEnter nested call <SID>goyo_enter()
@@ -214,7 +225,7 @@ if has("nvim")
 endif
 " }}}
 " MISC {{{
-colorscheme usmyck
-syntax off
+colorscheme efficient
+" syntax off
 " }}}
 " vim: fdm=marker syntax=vim
